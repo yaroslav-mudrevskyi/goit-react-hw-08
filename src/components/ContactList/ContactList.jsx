@@ -1,8 +1,9 @@
 import Contact from "../Contact/Contact";
+import s from "./ContactList.module.css";
 
 const ContactList = ({ contacts, handleDeleteContact }) => {
   return (
-    <div>
+    <div className={s.item}>
       {contacts.map((contact) => (
         <Contact
           key={contact.id}

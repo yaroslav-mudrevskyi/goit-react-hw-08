@@ -1,5 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useId } from "react";
 import * as Yup from "yup";
+import s from "./ContactForm.module.css";
 
 const ContactForm = ({ handleAddContact }) => {
   const initialValues = {
@@ -7,14 +9,17 @@ const ContactForm = ({ handleAddContact }) => {
     number: "",
   };
 
+  const nameId = useId();
+  const numberId = useId();
+
   const contactSchema = Yup.object({
     name: Yup.string()
       .min(3, "To short name")
       .max(50, "To long name")
       .required("Is required"),
     number: Yup.string()
-      .min(3, "To short name")
-      .max(50, "To long name")
+      .min(3, "To short number")
+      .max(50, "To long number")
       .required("Is required"),
   });
 
@@ -24,26 +29,40 @@ const ContactForm = ({ handleAddContact }) => {
   };
 
   return (
-    <div>
+    <div className={s.container}>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={contactSchema}
       >
-        <Form>
-          <label>
+        <Form className={s.wrapper}>
+          <label htmlFor={nameId} className={s.label}>
+            Name
             <Field
+              className={s.input}
+              id={nameId}
               name="name"
               type="text"
-              placeholder=" Enter contact name..."
+              placeholder=" Enter new contact name..."
+              autocomplete="off"
             />
-            <ErrorMessage name="name" component="div" />
+            <ErrorMessage name="name" component="span" />
           </label>
-          <label>
-            <Field name="number" type="tel" placeholder=" xxx-xx-xx " />
-            <ErrorMessage name="number" component="div" />
+          <label htmlFor={numberId} className={s.label}>
+            Number
+            <Field
+              className={s.input}
+              name="number"
+              type="tel"
+              placeholder=" xxx-xx-xx "
+              id={numberId}
+              autocomplete="off"
+            />
+            <ErrorMessage name="number" component="span" />
           </label>
-          <button type="submit">Add Contact</button>
+          <button className={s.btn} type="submit">
+            Add Contact
+          </button>
         </Form>
       </Formik>
     </div>

@@ -3,6 +3,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { nanoid } from "nanoid";
+import s from "./App.module.css";
 
 const initialContacts = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -12,9 +13,13 @@ const initialContacts = [
 ];
 
 const App = () => {
-  const [contacts, setContacts] = useState(() =>
-    JSON.parse(window.localStorage.getItem("contacts") ?? initialContacts)
-  );
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = window.localStorage.getItem("contacts");
+    if (savedContacts !== null) {
+      return JSON.parse(savedContacts);
+    }
+    return initialContacts;
+  });
 
   const [searchContact, setSearchContact] = useState("");
 
@@ -36,8 +41,8 @@ const App = () => {
   );
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={s.wrapper}>
+      <h1 className={s.title}>Phonebook</h1>
       <ContactForm handleAddContact={handleAddContact} />
       <SearchBox
         searchContact={searchContact}
