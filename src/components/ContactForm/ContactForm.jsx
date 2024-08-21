@@ -1,9 +1,14 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 import { useId } from "react";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import s from "./ContactForm.module.css";
+import { addContact } from "../../redux/contactsSlice";
 
 const ContactForm = ({ handleAddContact }) => {
+  const dispatch = useDispatch;
+
   const initialValues = {
     name: "",
     number: "",
@@ -25,6 +30,8 @@ const ContactForm = ({ handleAddContact }) => {
 
   const handleSubmit = (values, options) => {
     handleAddContact(values);
+    const newContact = { id: nanoid(), ...values };
+    dispatch(addContact(newContact));
     options.resetForm();
   };
 
@@ -44,7 +51,7 @@ const ContactForm = ({ handleAddContact }) => {
               name="name"
               type="text"
               placeholder=" Enter new contact name..."
-              autocomplete="off"
+              autoComplete="off"
             />
             <ErrorMessage name="name" component="span" />
           </label>
@@ -56,7 +63,7 @@ const ContactForm = ({ handleAddContact }) => {
               type="tel"
               placeholder=" xxx-xx-xx "
               id={numberId}
-              autocomplete="off"
+              autoComplete="off"
             />
             <ErrorMessage name="number" component="span" />
           </label>
