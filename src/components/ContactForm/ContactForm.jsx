@@ -6,8 +6,8 @@ import * as Yup from "yup";
 import s from "./ContactForm.module.css";
 import { addContact } from "../../redux/contactsSlice";
 
-const ContactForm = ({ handleAddContact }) => {
-  const dispatch = useDispatch;
+const ContactForm = () => {
+  const dispatch = useDispatch();
 
   const initialValues = {
     name: "",
@@ -29,7 +29,6 @@ const ContactForm = ({ handleAddContact }) => {
   });
 
   const handleSubmit = (values, options) => {
-    handleAddContact(values);
     const newContact = { id: nanoid(), ...values };
     dispatch(addContact(newContact));
     options.resetForm();
