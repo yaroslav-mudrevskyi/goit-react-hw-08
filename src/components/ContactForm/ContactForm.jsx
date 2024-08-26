@@ -59,7 +59,7 @@ const ContactForm = () => {
               className={s.input}
               name="number"
               type="tel"
-              placeholder=" xxx-xx-xx "
+              placeholder=" xxx-xxx-xxxx "
               id={numberId}
               autoComplete="off"
             />
