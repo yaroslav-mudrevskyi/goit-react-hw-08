@@ -5,8 +5,8 @@ import s from "./UserMenu.module.css";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-
   const user = useSelector(selectUser);
+
   return (
     <div className={s.wrapper}>
       <p className={s.username}>Welcome, {user.name}</p>

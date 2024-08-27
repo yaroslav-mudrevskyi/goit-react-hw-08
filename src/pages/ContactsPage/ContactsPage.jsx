@@ -8,6 +8,7 @@ import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import ContactList from "../../components/ContactList/ContactList";
 import s from "./ContactsPage.module.css";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 
 const ContactsPage = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -19,18 +20,21 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.wrapper}>
-      <h1 className={s.title}>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      {isLoading && <Loader />}
-      {isError && (
-        <ErrorMessage
-          title={"Something went wrong, please, try again later!"}
-        />
-      )}
-      <ContactList />
-    </div>
+    <>
+      <DocumentTitle>Contacts</DocumentTitle>
+      <div className={s.wrapper}>
+        <h1 className={s.title}>Phonebook</h1>
+        <ContactForm />
+        <SearchBox />
+        {isLoading && <Loader />}
+        {isError && (
+          <ErrorMessage
+            title={"Something went wrong, please, try again later!"}
+          />
+        )}
+        <ContactList />
+      </div>
+    </>
   );
 };
 

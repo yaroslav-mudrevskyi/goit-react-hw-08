@@ -1,4 +1,10 @@
-.link {
+.list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* .link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
@@ -8,4 +14,4 @@
 
 .link.active {
   color: #e84a5f;
-}
+} */
