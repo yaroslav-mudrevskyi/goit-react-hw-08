@@ -8,7 +8,6 @@ const LoginForm = () => {
   const initialValues = { email: "", password: "" };
 
   const handleSubmit = (values, action) => {
-    console.log(values);
     dispatch(login(values));
     action.resetForm();
   };

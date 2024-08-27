@@ -55,7 +55,7 @@ export const refreshUser = createAsyncThunk(
     if (!auth.token) return thunkAPI.rejectWithValue("Unable to fetch user");
     try {
       setAuthHeader(auth.token);
-      const { data } = await instance.get("/users/me");
+      const { data } = await instance.get("/users/current");
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
