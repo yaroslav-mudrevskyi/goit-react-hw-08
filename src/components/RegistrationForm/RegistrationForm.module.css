@@ -6,7 +6,7 @@
     url("../../image/register_BG.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 49px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,8 @@
 }
 
 .input {
-  padding: 7px 12px;
+  width: 250px;
+  padding: 7px 20px;
   border: none;
   border-radius: 20px;
   outline: none;
@@ -54,14 +55,15 @@
 .btn {
   display: block;
   font-size: 16px;
-  padding: 8px 14px;
+  padding: 10px 30px;
   border-radius: 15px;
-
   color: white;
-  background-color: rgba(73, 70, 236, 0.473);
+  background-color: rgba(73, 70, 236);
+  transition: all 0.3s ease-in-out;
   &:hover {
+    transform: scale(1.05);
     cursor: pointer;
-    background-color: rgba(30, 27, 178, 0.473);
+    background-color: rgba(30, 27, 178);
   }
 }
 

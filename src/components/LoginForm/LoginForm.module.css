@@ -1,12 +1,12 @@
 .wrapper {
   background-image: linear-gradient(
-      rgba(235, 129, 143, 0.5),
-      rgba(113, 16, 66, 0.5)
+      rgba(119, 103, 179, 0.212),
+      rgba(140, 137, 179, 0.5)
     ),
-    url("../../image/Login_BG_image.jpg");
+    url("../../image/login_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 49px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
   margin: 0 auto;
   width: 300px;
   border-radius: 40px;
-  background-color: rgba(235, 129, 143, 0.5);
+  background-color: rgba(70, 117, 234, 0.5);
 }
 
 .label {
@@ -38,30 +38,32 @@
 }
 
 .input {
+  width: 250px;
   padding: 7px 12px;
   border: none;
   border-radius: 20px;
   outline: none;
   color: #191815;
-  text-shadow: rgb(238, 66, 106) 1px 0 10px;
+  text-shadow: rgb(100, 66, 238) 1px 0 10px;
   text-align: center;
   box-shadow: rgb(9, 105, 208) 0px 20px 30px -10px;
   &:focus {
-    outline: 2px solid rgb(213, 12, 66);
+    outline: 2px solid rgb(6, 23, 130);
   }
 }
 
 .btn {
   display: block;
   font-size: 16px;
-  padding: 8px 14px;
+  padding: 10px 30px;
   border-radius: 15px;
-
   color: white;
-  background-color: rgba(235, 129, 143, 0.907);
+  background-color: rgb(73, 70, 236);
+  transition: all 0.3s ease-in-out;
   &:hover {
+    transform: scale(1.05);
     cursor: pointer;
-    background-color: rgba(177, 73, 87, 0.907);
+    background-color: rgba(30, 27, 178);
   }
 }
 

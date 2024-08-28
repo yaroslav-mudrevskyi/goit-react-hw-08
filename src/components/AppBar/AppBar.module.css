@@ -1,3 +1,16 @@
+.header {
+  border-bottom: 2px solid #421345;
+  background: rgb(89, 62, 243);
+  background: linear-gradient(
+    180deg,
+    rgba(89, 62, 243, 1) 0%,
+    rgba(65, 127, 147, 0.6307773109243697) 100%
+  );
+  border-radius: 0 0 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
