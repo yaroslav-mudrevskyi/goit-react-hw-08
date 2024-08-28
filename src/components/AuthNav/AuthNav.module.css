@@ -18,3 +18,8 @@
     transform: scale(1.08);
   }
 }
+
+.active {
+  composes: link;
+  text-decoration: underline;
+}

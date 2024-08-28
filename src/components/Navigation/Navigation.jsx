@@ -5,14 +5,15 @@ import s from "./Navigation.module.css";
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const addActive = ({ isActive }) => (isActive ? s.active : s.link);
 
   return (
     <nav className={s.nav}>
-      <NavLink className={s.link} to="/">
+      <NavLink className={addActive} to="/">
         Home
       </NavLink>
       {isLoggedIn && (
-        <NavLink className={s.link} to="/contacts">
+        <NavLink className={addActive} to="/contacts">
           Contacts
         </NavLink>
       )}
