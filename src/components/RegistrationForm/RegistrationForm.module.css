@@ -1,0 +1,76 @@
+.wrapper {
+  background-image: linear-gradient(
+      rgba(200, 235, 129, 0.212),
+      rgba(140, 137, 179, 0.5)
+    ),
+    url("../../image/register_BG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 300px;
+  border-radius: 40px;
+  background-color: rgba(70, 117, 234, 0.5);
+}
+
+.label {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  color: #191815;
+  text-shadow: rgb(100, 66, 238) 1px 0 10px;
+  text-align: center;
+  box-shadow: rgb(9, 105, 208) 0px 20px 30px -10px;
+  &:focus {
+    outline: 2px solid rgb(6, 23, 130);
+  }
+}
+
+.btn {
+  display: block;
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 15px;
+
+  color: white;
+  background-color: rgba(73, 70, 236, 0.473);
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(30, 27, 178, 0.473);
+  }
+}
+
+.subtitle {
+  font-size: 12px;
+  text-align: center;
+  color: white;
+}
+
+.link {
+  text-decoration: underline;
+}

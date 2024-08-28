@@ -1,7 +1,7 @@
 .wrapper {
   background-image: linear-gradient(
-      rgba(0, 0, 255, 0.5),
-      rgba(255, 255, 0, 0.5)
+      rgba(0, 0, 255, 0.3),
+      rgba(255, 255, 0, 0.3)
     ),
     url("../../image/home_page.jpg");
   background-repeat: no-repeat;
@@ -23,11 +23,35 @@
 }
 
 .title {
-  font-size: 40px;
+  font-size: 46px;
   background-color: #2c0282;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: rgba(208, 59, 59, 0.5) 0px 3px 3px;
+  text-shadow: 1px 1px 2px rgba(205, 231, 10, 0.912), 0 0 1em blue,
+    0 0 0.2em blue;
+}
+
+.btn {
+  display: block;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 15px;
+  color: rgb(19, 8, 123);
+  background-color: rgba(202, 202, 225, 0.473);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #eef6a5;
+  &:hover {
+    cursor: pointer;
+    color: rgb(190, 240, 192);
+    /* background-color: rgba(30, 27, 178, 0.473); */
+    border: 1px solid #eef6a5;
+    background: rgb(229, 236, 115);
+    background: linear-gradient(
+      0deg,
+      rgba(42, 23, 115, 0.59) 0%,
+      rgba(75, 16, 211, 0.545) 100%
+    );
+  }
 }
