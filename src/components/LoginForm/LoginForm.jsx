@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { login } from "../../redux/auth/operations";
+import { logIn } from "../../redux/auth/operations";
 import s from "./LoginForm.module.css";
 
 const LoginForm = () => {
@@ -10,7 +10,7 @@ const LoginForm = () => {
 
   const initialValues = { email: "", password: "" };
 
-  const loginSchema = Yup.object({
+  const logInSchema = Yup.object({
     email: Yup.string()
       .min(3, "To short email")
       .max(50, "To long email")
@@ -22,7 +22,7 @@ const LoginForm = () => {
   });
 
   const handleSubmit = (values, action) => {
-    dispatch(login(values));
+    dispatch(logIn(values));
     action.resetForm();
   };
   return (
@@ -30,7 +30,7 @@ const LoginForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validationSchema={loginSchema}
+        validationSchema={logInSchema}
       >
         <Form className={s.form}>
           <h2 className={s.title}>Login</h2>
