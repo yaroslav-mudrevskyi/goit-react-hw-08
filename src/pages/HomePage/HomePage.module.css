@@ -33,20 +33,15 @@
   font-size: 20px;
   padding: 10px 30px;
   border-radius: 15px;
-  color: rgb(19, 8, 123);
-  background-color: rgba(115, 138, 230, 0.473);
+  color: rgb(233, 239, 239);
+  background-color: rgba(0, 0, 255, 0.6);
   transition: all 0.3s ease-in-out;
   border: 1px solid #eef6a5;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     cursor: pointer;
-    color: rgb(190, 240, 192);
+    color: rgb(233, 239, 239);
     border: 1px solid #eef6a5;
-    background: rgb(229, 236, 115);
-    background: linear-gradient(
-      0deg,
-      rgba(41, 23, 115, 0.785) 0%,
-      rgba(75, 16, 211, 0.545) 100%
-    );
+    background-color: rgba(0, 0, 255, 0.966);
   }
 }

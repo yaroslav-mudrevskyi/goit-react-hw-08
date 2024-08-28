@@ -2,5 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 200px;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 18px;
+  font-style: italic;
+  color: white;
+}
+
+.btn {
+  font-style: italic;
+  font-size: 20px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: rgba(207, 206, 215, 0.74);
+    transform: scale(1.08);
+  }
 }

@@ -8,7 +8,7 @@
   margin: 0 auto;
   border: none;
   width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 49px);
   background: rgb(89, 62, 243);
   background: linear-gradient(
     180deg,
@@ -21,6 +21,6 @@
   font-size: 36px;
   font-weight: 800;
   font-style: italic;
-  color: #191815;
+  color: rgb(134, 252, 238);
   text-shadow: #fc0 1px 0 10px;
 }

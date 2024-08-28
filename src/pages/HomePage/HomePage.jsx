@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className={s.container}>
         <h1 className={s.title}>Manage Your Contacts with Ease!</h1>
         <Link className={s.btn} to="/login">
-          Let's go!
+          Let's start!
         </Link>
       </div>
     </div>

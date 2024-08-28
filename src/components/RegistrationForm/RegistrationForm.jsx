@@ -1,7 +1,8 @@
-import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
 import { Link } from "react-router-dom";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { register } from "../../redux/auth/operations";
+import * as Yup from "yup";
 import s from "./RegistrationForm.module.css";
 
 const RegistrationForm = () => {
@@ -13,6 +14,21 @@ const RegistrationForm = () => {
     password: "",
   };
 
+  const registrationSchema = Yup.object({
+    name: Yup.string()
+      .min(3, "To short name")
+      .max(50, "To long name")
+      .required("Is required"),
+    email: Yup.string()
+      .min(3, "To short email")
+      .max(50, "To long email")
+      .required("Is required"),
+    password: Yup.string()
+      .min(8, "To short password")
+      .max(50, "To long password")
+      .required("Is required"),
+  });
+
   const handleSubmit = (values, action) => {
     dispatch(register(values));
     console.log(values);
@@ -21,7 +37,11 @@ const RegistrationForm = () => {
 
   return (
     <div className={s.wrapper}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={registrationSchema}
+      >
         <Form className={s.form}>
           <h2 className={s.title}>Register</h2>
           <label className={s.label}>
@@ -31,8 +51,8 @@ const RegistrationForm = () => {
               name="name"
               className={s.input}
               placeholder=" Enter your name..."
-              autoComplete="off"
             />
+            <ErrorMessage name="name" component="span" />
           </label>
 
           <label className={s.label}>
@@ -42,8 +62,8 @@ const RegistrationForm = () => {
               name="email"
               className={s.input}
               placeholder=" Enter your email..."
-              autoComplete="off"
             />
+            <ErrorMessage name="email" component="span" />
           </label>
 
           <label className={s.label}>
@@ -53,8 +73,8 @@ const RegistrationForm = () => {
               name="password"
               className={s.input}
               placeholder=" Enter your password..."
-              autoComplete="off"
             />
+            <ErrorMessage name="password" component="span" />
           </label>
 
           <button type="submit" className={s.btn}>
@@ -63,7 +83,7 @@ const RegistrationForm = () => {
           <p className={s.subtitle}>
             Do you have an account?
             <Link to="/login" className={s.link}>
-              Log In
+              Login
             </Link>
           </p>
         </Form>
